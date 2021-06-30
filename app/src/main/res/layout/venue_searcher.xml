@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/venue_searcher_2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background">
+
+    <EditText
+        android:id="@+id/venue_searcher_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/margin_normal"
+        android:layout_marginStart="@dimen/margin_big"
+        android:layout_marginEnd="@dimen/margin_normal"
+        android:hint="@string/search_for_venues_text"
+        android:maxLines="1"
+        app:layout_constraintEnd_toStartOf="@id/venue_searcher_clear_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/venue_searcher_clear_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_big"
+        android:text="@string/clear_button"
+        app:layout_constraintBottom_toBottomOf="@id/venue_searcher_edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/venue_searcher_edit_text" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/venue_searcher_result_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/margin_big"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:layout_marginBottom="@dimen/margin_big"
+        android:background="@color/white_transparent_80"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/venue_searcher_edit_text" />
+
+    <ProgressBar
+        android:id="@+id/venue_searcher_loading_data_progress_bar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/venue_searcher_result_list"
+        app:layout_constraintEnd_toEndOf="@id/venue_searcher_result_list"
+        app:layout_constraintStart_toStartOf="@id/venue_searcher_result_list"
+        app:layout_constraintTop_toTopOf="@id/venue_searcher_result_list" />
+
+    <TextView
+        android:id="@+id/venue_searcher_info_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_normal"
+        android:text="@string/venues_info_text"
+        android:textColor="@color/cardview_dark_background"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/venue_searcher_result_list"
+        app:layout_constraintEnd_toEndOf="@id/venue_searcher_result_list"
+        app:layout_constraintStart_toStartOf="@id/venue_searcher_result_list"
+        app:layout_constraintTop_toTopOf="@id/venue_searcher_result_list" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/venue_searcher_waiting_for_location_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/black_transparent_80"
+        app:layout_constraintBottom_toBottomOf="@id/venue_searcher_result_list"
+        app:layout_constraintTop_toTopOf="@id/venue_searcher_result_list">
+
+        <ProgressBar
+            android:id="@+id/venue_searcher_waiting_for_location_progress_bar"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/venue_searcher_waiting_for_location_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_normal"
+            android:text="@string/waiting_for_location_text"
+            app:layout_constraintEnd_toEndOf="@id/venue_searcher_waiting_for_location_progress_bar"
+            app:layout_constraintStart_toStartOf="@id/venue_searcher_waiting_for_location_progress_bar"
+            app:layout_constraintTop_toBottomOf="@id/venue_searcher_waiting_for_location_progress_bar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

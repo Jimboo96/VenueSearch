@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Venue Searcher</string>
+    <string name="search_for_venues_text">Search for venues near you!</string>
+    <string name="venues_info_text">No nearby venues found with your search word!</string>
+    <string name="waiting_for_location_text">Waiting for a location update…</string>
+    <string name="distance_text">%s m</string>
+    <string name="clear_button">Clear</string>
+    <string name="toast_location_permission_denied">Please allow the app to access your location to search for nearby venues!</string>
+    <string name="toast_quota_limit_exceeded">Quota limit exceeded for the day! Try again later.</string>
+</resources>
